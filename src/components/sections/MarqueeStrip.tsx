@@ -11,7 +11,7 @@ const marqueeItems = [
   { word: "Relax", image: "/images/gallery/gallery-7.jpg" },
   { word: "Restore", image: "/images/services/thai-massage.jpg" },
   { word: "Rejuvenate", image: "/images/services/herbal.jpg" },
-  { word: "Heal", image: "/images/gallery/gallery-11.jpg" },
+  { word: "Heal", image: "/images/services/signature.jpg" },
   { word: "Balance", image: "/images/gallery/gallery-6.jpg" },
   { word: "Serenity", image: "/images/about-experience.jpg" },
   { word: "Wellness", image: "/images/services/scrub.jpg" },

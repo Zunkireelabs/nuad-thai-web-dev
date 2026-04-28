@@ -361,61 +361,61 @@ html.lenis body {
    ═══════════════════════════════════════════ */
 
 .bridge-to-warm {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-primary), var(--bg-warm));
   pointer-events: none;
 }
 
 .bridge-from-warm {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-warm), var(--bg-primary));
   pointer-events: none;
 }
 
 .bridge-to-forest {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-primary), var(--bg-forest));
   pointer-events: none;
 }
 
 .bridge-from-forest {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-forest), var(--bg-primary));
   pointer-events: none;
 }
 
 .bridge-to-plum {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-primary), var(--bg-plum));
   pointer-events: none;
 }
 
 .bridge-from-plum {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-plum), var(--bg-primary));
   pointer-events: none;
 }
 
 .bridge-to-navy {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-primary), var(--bg-navy));
   pointer-events: none;
 }
 
 .bridge-from-navy {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-navy), var(--bg-primary));
   pointer-events: none;
 }
 
 .bridge-to-amber {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-primary), var(--bg-amber));
   pointer-events: none;
 }
 
 .bridge-from-amber {
-  height: 48px;
+  height: 24px;
   background: linear-gradient(to bottom, var(--bg-amber), var(--bg-primary));
   pointer-events: none;
 }
