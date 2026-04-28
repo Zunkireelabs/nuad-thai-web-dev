@@ -251,9 +251,7 @@ export default function LocationsSection() {
                     </a>
 
                     <a
-                      href="https://www.nuadthainepal.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/#contact"
                       className="px-7 py-2.5 border border-[#C9A96E]/40 text-[#C9A96E] text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500"
                     >
                       Book Now
@@ -404,9 +402,7 @@ export default function LocationsSection() {
                       </div>
                       <div className="w-[1px] h-8 bg-[#C9A96E]/10" />
                       <a
-                        href="https://www.nuadthainepal.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/#locations"
                         className="text-[#C9A96E]/60 text-[10px] tracking-[0.15em] uppercase font-light hover:text-[#C9A96E] transition-colors flex items-center gap-1.5"
                       >
                         Explore
@@ -451,9 +447,7 @@ export default function LocationsSection() {
                 </div>
 
                 <a
-                  href="https://www.nuadthainepal.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/#contact"
                   className="px-7 py-2.5 bg-[#C9A96E] text-[#0A0A0A] text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500"
                 >
                   Book Now

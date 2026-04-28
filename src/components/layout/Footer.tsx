@@ -58,9 +58,7 @@ export default function Footer() {
                 +977 980-2305670
               </a>
               <a
-                href="https://www.nuadthainepal.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/"
                 className="flex items-center gap-2 text-[13px] text-[#A09B93] hover:text-[#C9A96E] transition-colors duration-300 font-light"
               >
                 <svg className="w-3.5 h-3.5 text-[#C9A96E]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -198,9 +196,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="https://www.nuadthainepal.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#contact"
               className="text-[11px] text-[#6B6560]/60 hover:text-[#C9A96E] transition-colors duration-500 font-light"
             >
               Book Online
