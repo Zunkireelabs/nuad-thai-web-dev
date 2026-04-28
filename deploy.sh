@@ -7,7 +7,7 @@ ENV=${1:-dev}
 if [ "$ENV" == "prod" ]; then
     COMPOSE_FILE="docker-compose.yml"
     CONTAINER_NAME="naud-thai-web-prod"
-    URL="naud-web.zunkireelabs.com"
+    URL="nuadthainepal.com"
     echo "⚠️  PRODUCTION DEPLOYMENT to $URL"
     read -p "Are you sure? (y/n): " confirm
     if [ "$confirm" != "y" ]; then exit 1; fi
