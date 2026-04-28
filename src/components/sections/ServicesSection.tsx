@@ -81,7 +81,7 @@ const categories: ServiceCategory[] = [
   {
     id: "signature",
     title: "Signature Packages",
-    image: "/images/services/signature.jpg",
+    image: "/images/services/signature-v2.jpg",
     items: [
       {
         name: "Energise Body",
@@ -355,7 +355,7 @@ const categories: ServiceCategory[] = [
     id: "vip-packages",
     title: "VIP Membership Packages",
     subtitle: "Exclusive membership experiences — combine our finest treatments into one indulgent session.",
-    image: "/images/services/signature.jpg",
+    image: "/images/services/signature-v2.jpg",
     items: [
       {
         name: "VIP Universe",
