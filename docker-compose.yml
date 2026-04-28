@@ -1,0 +1,19 @@
+services:
+  naud-thai-web-prod:
+    build: .
+    container_name: naud-thai-web-prod
+    restart: unless-stopped
+    networks:
+      - hosting
+    labels:
+      - "traefik.enable=true"
+      # Router
+      - "traefik.http.routers.naud-thai-web-prod.rule=Host(`naud-web.zunkireelabs.com`)"
+      - "traefik.http.routers.naud-thai-web-prod.entrypoints=websecure"
+      - "traefik.http.routers.naud-thai-web-prod.tls.certresolver=letsencrypt"
+      # Service
+      - "traefik.http.services.naud-thai-web-prod.loadbalancer.server.port=80"
+
+networks:
+  hosting:
+    external: true

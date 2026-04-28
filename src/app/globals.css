@@ -1,0 +1,421 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   NUAD THAI — Design Tokens & Global Styles
+   ═══════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* Colors */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #111111;
+    --bg-card: #161616;
+    --text-primary: #E7E3DE;
+    --text-secondary: #A09B93;
+    --text-muted: #6B6560;
+    --gold: #C9A96E;
+    --gold-light: #D4BA85;
+    --gold-dark: #A8894E;
+    --gold-glow: rgba(201, 169, 110, 0.15);
+    --white: #FFFFFF;
+    --black: #000000;
+
+    /* Typography */
+    --font-serif: "Cormorant Garamond", "Georgia", serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+
+    /* Sensory Journey — tonal shifts per section */
+    --bg-warm: #16130E;        /* About: warm espresso */
+    --bg-forest: #0B100D;      /* Philosophy: deep forest green */
+    --bg-plum: #120E10;        /* Services: deep plum/burgundy */
+    --bg-navy: #0D0E14;        /* Experience: midnight navy */
+    --bg-amber: #14110C;       /* CTA: warm amber invitation */
+
+    /* Spacing */
+    --section-padding: clamp(60px, 8vw, 120px);
+    --container-max: 1400px;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" on, "ss02" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  ::selection {
+    background: var(--gold);
+    color: var(--bg-primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Lenis Smooth Scroll
+   ═══════════════════════════════════════════ */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   Typography
+   ═══════════════════════════════════════════ */
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+/* ═══════════════════════════════════════════
+   Custom Animations
+   ═══════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, -3%); }
+  50% { transform: translate(2%, 1%); }
+  75% { transform: translate(-1%, 2%); }
+}
+
+@keyframes scroll-hint {
+  0% { opacity: 0; transform: translateY(-8px); }
+  40% { opacity: 1; }
+  80% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--marquee-duration, 30s) linear infinite;
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   Film Grain Overlay
+   ═══════════════════════════════════════════ */
+
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: grain 6s steps(4) infinite;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════
+   Safari Performance Overrides
+   Lighter animations instead of disabling.
+   ═══════════════════════════════════════════ */
+
+/* Grain: reduced opacity + slower animation for Safari */
+.is-safari .grain-overlay::after {
+  opacity: 0.15 !important;
+  animation-duration: 8s !important;
+  animation-timing-function: steps(2) !important;
+}
+
+/* Floating particles: simpler, GPU-friendly */
+.is-safari .animate-float {
+  animation: float-slow 10s ease-in-out infinite !important;
+}
+
+.is-safari .animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite !important;
+}
+
+/* Pulse: keep but slower */
+.is-safari .animate-pulse-soft {
+  animation: pulse-soft 5s ease-in-out infinite !important;
+}
+
+/* Marquee: keep running, just slightly slower for perf */
+.is-safari .animate-marquee {
+  animation: marquee var(--marquee-duration, 35s) linear infinite !important;
+}
+
+.is-safari .animate-marquee-reverse {
+  animation: marquee-reverse var(--marquee-duration, 40s) linear infinite !important;
+}
+
+/* Scroll hint: keep it */
+.is-safari .animate-scroll-hint {
+  animation: scroll-hint 2.5s ease-in-out infinite !important;
+}
+
+/* Safari scroll reveal: lightweight CSS transitions for IO-triggered reveals */
+.is-safari .safari-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.is-safari .safari-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.is-safari .safari-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s ease-out,
+              transform 0.7s ease-out;
+}
+
+.is-safari .safari-reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.is-safari .safari-reveal-side {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease-out,
+              transform 0.7s ease-out;
+}
+
+.is-safari .safari-reveal-side.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Safari hover effects via CSS instead of GSAP */
+.is-safari .safari-hover-lift {
+  transition: transform 0.4s ease-out;
+}
+
+.is-safari .safari-hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+.is-safari .safari-hover-scale img {
+  transition: transform 0.6s ease-out;
+}
+
+.is-safari .safari-hover-scale:hover img {
+  transform: scale(1.06);
+}
+
+/* ═══════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════ */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-border {
+  border-color: rgba(201, 169, 110, 0.2);
+}
+
+.gold-border-hover:hover {
+  border-color: rgba(201, 169, 110, 0.5);
+}
+
+/* Section divider line */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  opacity: 0.3;
+}
+
+/* Perspective container for 3D effects */
+.perspective-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Image reveal mask — use opacity+transform for Safari perf */
+.image-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+              transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.image-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════
+   Sensory Journey — Tonal Gradient Bridges
+   ═══════════════════════════════════════════ */
+
+.bridge-to-warm {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-warm));
+  pointer-events: none;
+}
+
+.bridge-from-warm {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-warm), var(--bg-primary));
+  pointer-events: none;
+}
+
+.bridge-to-forest {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-forest));
+  pointer-events: none;
+}
+
+.bridge-from-forest {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-forest), var(--bg-primary));
+  pointer-events: none;
+}
+
+.bridge-to-plum {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-plum));
+  pointer-events: none;
+}
+
+.bridge-from-plum {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-plum), var(--bg-primary));
+  pointer-events: none;
+}
+
+.bridge-to-navy {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-navy));
+  pointer-events: none;
+}
+
+.bridge-from-navy {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-navy), var(--bg-primary));
+  pointer-events: none;
+}
+
+.bridge-to-amber {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-amber));
+  pointer-events: none;
+}
+
+.bridge-from-amber {
+  height: 48px;
+  background: linear-gradient(to bottom, var(--bg-amber), var(--bg-primary));
+  pointer-events: none;
+}
