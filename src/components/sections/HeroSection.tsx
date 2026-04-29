@@ -146,7 +146,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen min-h-[700px] overflow-hidden"
+      className="relative h-[100svh] sm:h-screen min-h-[600px] sm:min-h-[700px] overflow-hidden"
     >
       {/* Background Image with Parallax */}
       <div ref={bgRef} className="absolute inset-0" style={{ opacity: 0 }}>

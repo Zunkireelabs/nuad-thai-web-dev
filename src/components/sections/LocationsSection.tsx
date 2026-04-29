@@ -295,7 +295,9 @@ export default function LocationsSection() {
                   <span
                     className={cn(
                       "block text-[10px] tracking-[0.2em] font-mono mb-1.5 transition-colors duration-500",
-                      activeIndex === i ? "text-[#C9A96E]/60" : "text-[#6B6560]/30"
+                      activeIndex === i
+                        ? "text-[#C9A96E]/60"
+                        : "text-[#6B6560]/30 [@media(hover:none)]:text-[#C9A96E]/40"
                     )}
                   >
                     {String(i + 1).padStart(2, "0")}
@@ -304,7 +306,9 @@ export default function LocationsSection() {
                   <h4
                     className={cn(
                       "text-xl md:text-xl lg:text-2xl tracking-[-0.01em] transition-colors duration-500",
-                      activeIndex === i ? "text-[#E7E3DE]" : "text-[#A09B93]/40 group-hover:text-[#A09B93]/70"
+                      activeIndex === i
+                        ? "text-[#E7E3DE]"
+                        : "text-[#A09B93]/40 group-hover:text-[#A09B93]/70 [@media(hover:none)]:text-[#A09B93]/75"
                     )}
                     style={{ fontFamily: "var(--font-cormorant)", fontWeight: activeIndex === i ? 500 : 300 }}
                   >
@@ -314,7 +318,9 @@ export default function LocationsSection() {
                   <span
                     className={cn(
                       "block text-[10px] font-light mt-1 transition-colors duration-500",
-                      activeIndex === i ? "text-[#A09B93]/60" : "text-[#6B6560]/20"
+                      activeIndex === i
+                        ? "text-[#A09B93]/60"
+                        : "text-[#6B6560]/20 [@media(hover:none)]:text-[#A09B93]/45"
                     )}
                   >
                     {loc.area}
@@ -421,10 +427,13 @@ export default function LocationsSection() {
             </div>
 
             {/* Contact */}
-            <div className="border border-[#C9A96E]/10 bg-[#0d0b08] flex flex-col sm:flex-row items-center justify-between gap-5 p-7 md:p-10">
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full border border-[#C9A96E]/20 flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-[#C9A96E]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+            <div className="border border-[#C9A96E]/10 bg-[#0d0b08] flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-between gap-5 p-6 sm:p-7 md:p-10">
+              <a
+                href="tel:977-9802305670"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-11 h-11 rounded-full border border-[#C9A96E]/20 flex items-center justify-center shrink-0 group-hover:border-[#C9A96E]/40 transition-colors">
+                  <svg className="w-5 h-5 text-[#C9A96E]/40 group-hover:text-[#C9A96E] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                   </svg>
                 </div>
@@ -432,27 +441,26 @@ export default function LocationsSection() {
                   <p className="text-[10px] tracking-[0.15em] uppercase text-[#6B6560] font-light mb-0.5">
                     For more information
                   </p>
-                  <a
-                    href="tel:977-9802305670"
-                    className="text-xl text-[#E7E3DE] hover:text-[#C9A96E] transition-colors"
+                  <span
+                    className="text-xl text-[#E7E3DE] group-hover:text-[#C9A96E] transition-colors"
                     style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
                   >
                     977-9802305670
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/10 text-[#A09B93]/60">
-                  <svg className="w-4 h-4 text-[#C9A96E]/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-4">
+                <div className="flex items-center gap-2 px-3 sm:px-4 py-2 border border-[#C9A96E]/10 text-[#A09B93]/60">
+                  <svg className="w-4 h-4 text-[#C9A96E]/25 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25V7.875c0-.621.504-1.125 1.125-1.125H9.75M21 14.25V7.875c0-.621-.504-1.125-1.125-1.125H15M9.75 6.75h5.25M9.75 6.75V3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V6.75" />
                   </svg>
-                  <span className="text-[11px] font-light">Free Parking</span>
+                  <span className="text-[11px] font-light whitespace-nowrap">Free Parking</span>
                 </div>
 
                 <a
                   href="/#contact"
-                  className="px-7 py-2.5 bg-[#C9A96E] text-[#0A0A0A] text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500"
+                  className="px-5 sm:px-7 py-2.5 bg-[#C9A96E] text-[#0A0A0A] text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500 whitespace-nowrap"
                 >
                   Book Now
                 </a>

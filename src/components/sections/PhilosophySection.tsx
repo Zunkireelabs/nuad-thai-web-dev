@@ -186,7 +186,7 @@ export default function PhilosophySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative py-16 md:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background image with parallax */}
       <div className="absolute inset-0 overflow-hidden">
@@ -358,7 +358,9 @@ export default function PhilosophySection() {
                 <span
                   className={cn(
                     "text-[10px] tracking-[0.15em] font-light mb-3 transition-colors duration-500",
-                    hoveredElement === i ? "text-[#C9A96E]/70" : "text-[#C9A96E]/30"
+                    hoveredElement === i
+                      ? "text-[#C9A96E]/70"
+                      : "text-[#C9A96E]/30 [@media(hover:none)]:text-[#C9A96E]/65"
                   )}
                   style={{ fontStyle: "italic" }}
                 >
@@ -369,7 +371,9 @@ export default function PhilosophySection() {
                 <p
                   className={cn(
                     "text-[12px] leading-[1.7] font-light transition-all duration-500 max-w-[180px]",
-                    hoveredElement === i ? "text-[#A09B93]" : "text-[#6B6560]/60"
+                    hoveredElement === i
+                      ? "text-[#A09B93]"
+                      : "text-[#6B6560]/60 [@media(hover:none)]:text-[#A09B93]/85"
                   )}
                 >
                   {el.description}

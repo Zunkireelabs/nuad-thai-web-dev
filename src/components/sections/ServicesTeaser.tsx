@@ -82,7 +82,7 @@ export default function ServicesTeaser() {
     <section
       ref={sectionRef}
       id="services"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-16 md:py-32 lg:py-40"
       style={{ backgroundColor: "var(--bg-plum)" }}
     >
       {/* Deep plum/rose atmospheric glow — velvet luxury */}

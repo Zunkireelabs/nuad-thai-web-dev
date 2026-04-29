@@ -40,7 +40,7 @@ export default function CTASection() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative py-24 md:py-28 lg:py-32 overflow-hidden"
+      className="relative py-16 md:py-28 lg:py-32 overflow-hidden"
     >
       {/* Background — warmest section */}
       <div ref={bgRef} className="absolute inset-[-15%]">
