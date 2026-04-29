@@ -266,15 +266,19 @@ export default function LocationsSection() {
             </div>
 
             {/* ─── Location Selector Strip ─── */}
-            <div className="grid grid-cols-4 border-t border-[#C9A96E]/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 border-t border-[#C9A96E]/10">
               {locations.map((loc, i) => (
                 <button
                   key={loc.name}
                   onClick={() => switchLocation(i)}
                   onMouseEnter={() => switchLocation(i)}
                   className={cn(
-                    "relative py-5 md:py-7 text-center transition-all duration-500 group",
-                    i < locations.length - 1 && "border-r border-[#C9A96E]/8",
+                    "relative py-5 md:py-7 px-2 text-center transition-all duration-500 group",
+                    // mobile (2-col) — right border on left tile, bottom border on top row
+                    i % 2 === 0 && "border-r border-[#C9A96E]/8",
+                    i < 2 && "border-b border-[#C9A96E]/8 md:border-b-0",
+                    // desktop (4-col) — right border on all but last column
+                    i < locations.length - 1 && "md:border-r md:border-[#C9A96E]/8",
                     activeIndex === i
                       ? "bg-[#C9A96E]/[0.04]"
                       : "hover:bg-[#C9A96E]/[0.02]"
@@ -299,7 +303,7 @@ export default function LocationsSection() {
 
                   <h4
                     className={cn(
-                      "text-lg md:text-xl lg:text-2xl tracking-[-0.01em] transition-colors duration-500",
+                      "text-xl md:text-xl lg:text-2xl tracking-[-0.01em] transition-colors duration-500",
                       activeIndex === i ? "text-[#E7E3DE]" : "text-[#A09B93]/40 group-hover:text-[#A09B93]/70"
                     )}
                     style={{ fontFamily: "var(--font-cormorant)", fontWeight: activeIndex === i ? 500 : 300 }}

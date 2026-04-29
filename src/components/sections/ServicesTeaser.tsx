@@ -119,16 +119,17 @@ export default function ServicesTeaser() {
                 <ScrollReveal key={item.title} delay={0.2 + i * 0.1}>
                   <div
                     className={cn(
-                      "py-6 px-4 md:px-6 border-b border-[#C9A96E]/8 cursor-pointer group transition-all duration-500",
+                      "py-6 px-3 md:px-6 border-b border-[#C9A96E]/8 cursor-pointer group transition-all duration-500",
                       activeIndex === i && "bg-[#C9A96E]/[0.03]"
                     )}
+                    onClick={() => switchHighlight(i)}
                     onMouseEnter={() => switchHighlight(i)}
                   >
-                    <div className="flex items-start gap-5">
+                    <div className="flex items-start gap-3 md:gap-5">
                       {/* Number */}
                       <span
                         className={cn(
-                          "text-2xl md:text-3xl shrink-0 w-10 transition-colors duration-500",
+                          "text-2xl md:text-3xl shrink-0 w-7 md:w-10 transition-colors duration-500",
                           activeIndex === i ? "text-[#C9A96E]" : "text-[#C9A96E]/20"
                         )}
                         style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300 }}
@@ -136,8 +137,8 @@ export default function ServicesTeaser() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
 
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between gap-4 mb-1.5">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 mb-1.5">
                           <h3
                             className={cn(
                               "text-lg md:text-xl tracking-[-0.01em] transition-colors duration-500",

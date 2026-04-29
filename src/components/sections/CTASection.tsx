@@ -107,7 +107,7 @@ export default function CTASection() {
 
             {/* Feature badges */}
             <ScrollReveal delay={0.3}>
-              <div className="flex flex-wrap gap-5 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full border border-[#C9A96E]/20 flex items-center justify-center">
                     <svg className="w-4.5 h-4.5 text-[#C9A96E]/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
@@ -247,7 +247,7 @@ export default function CTASection() {
         {/* ─── Bottom strip ─── */}
         <ScrollReveal delay={0.35}>
           <div className="mt-8 md:mt-10 pt-4 border-t border-[#C9A96E]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6 text-[11px] tracking-[0.1em] text-[#6B6560]/60 font-light">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-6 text-[11px] tracking-[0.1em] text-[#6B6560]/60 font-light text-center">
               <span>Lazimpat</span>
               <span className="text-[#C9A96E]/15">|</span>
               <span>Sanepa</span>

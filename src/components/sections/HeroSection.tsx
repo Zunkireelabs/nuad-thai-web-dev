@@ -188,12 +188,12 @@ export default function HeroSection() {
       >
         {/* Section marker */}
         <div ref={taglineRef} className="mb-8" style={{ opacity: 0 }}>
-          <div className="flex items-center gap-4 justify-center">
-            <div className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[#C9A96E]/50" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-light">
+          <div className="flex items-center gap-2 sm:gap-4 justify-center">
+            <div className="w-6 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#C9A96E]/50" />
+            <span className="text-[10px] tracking-[0.25em] sm:tracking-[0.4em] uppercase text-[#C9A96E] font-light whitespace-nowrap">
               Nuad Thai Spa & Wellness
             </span>
-            <div className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[#C9A96E]/50" />
+            <div className="w-6 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#C9A96E]/50" />
           </div>
         </div>
 
@@ -235,16 +235,20 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Buttons */}
-        <div ref={ctaRef} className="flex gap-4" style={{ opacity: 0 }}>
+        <div
+          ref={ctaRef}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none"
+          style={{ opacity: 0 }}
+        >
           <a
             href="#services"
-            className="px-8 py-3.5 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500"
+            className="px-8 py-4 sm:py-3.5 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500 text-center"
           >
             Explore Services
           </a>
           <a
             href="#about"
-            className="px-8 py-3.5 border border-[#E7E3DE]/20 text-[#E7E3DE] text-[11px] tracking-[0.2em] uppercase font-light hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-500"
+            className="px-8 py-4 sm:py-3.5 border border-[#E7E3DE]/20 text-[#E7E3DE] text-[11px] tracking-[0.2em] uppercase font-light hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-500 text-center"
           >
             Our Story
           </a>
