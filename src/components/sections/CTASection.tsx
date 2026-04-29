@@ -76,7 +76,7 @@ export default function CTASection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
           {/* ─── LEFT: Headline + Features ─── */}
-          <div>
+          <div className="text-center lg:text-left">
             {/* Status badge */}
             <ScrollReveal>
               <div className="inline-flex items-center gap-2.5 px-5 py-2 border border-[#C9A96E]/20 rounded-full mb-5">
@@ -99,7 +99,7 @@ export default function CTASection() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <p className="text-[13px] text-[#A09B93] font-light leading-[1.7] max-w-lg mb-6">
+              <p className="text-[13px] text-[#A09B93] font-light leading-[1.7] max-w-lg mx-auto lg:mx-0 mb-6">
                 Step into a world where ancient healing meets modern luxury.
                 Your path to total wellbeing begins with a single moment of calm.
               </p>

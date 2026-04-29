@@ -28,7 +28,7 @@ export default function Footer() {
     <footer className="relative bg-[#080808] border-t border-[#C9A96E]/10">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         {/* Main footer */}
-        <div className="py-16 md:py-20 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="py-14 md:py-20 grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="mb-6">
@@ -68,6 +68,9 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
+          {/* Services + Company — pair side-by-side on mobile, separate cols at lg */}
+          <div className="grid grid-cols-2 gap-8 lg:contents">
 
           {/* Services column */}
           <div>
@@ -148,6 +151,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
+          </div>{/* end Services + Company wrapper */}
 
           {/* Locations column */}
           <div>

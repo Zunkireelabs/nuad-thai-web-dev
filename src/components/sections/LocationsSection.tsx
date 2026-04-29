@@ -297,7 +297,7 @@ export default function LocationsSection() {
                       "block text-[10px] tracking-[0.2em] font-mono mb-1.5 transition-colors duration-500",
                       activeIndex === i
                         ? "text-[#C9A96E]/60"
-                        : "text-[#6B6560]/30 [@media(hover:none)]:text-[#C9A96E]/40"
+                        : "text-[#C9A96E]/35"
                     )}
                   >
                     {String(i + 1).padStart(2, "0")}
@@ -308,7 +308,7 @@ export default function LocationsSection() {
                       "text-xl md:text-xl lg:text-2xl tracking-[-0.01em] transition-colors duration-500",
                       activeIndex === i
                         ? "text-[#E7E3DE]"
-                        : "text-[#A09B93]/40 group-hover:text-[#A09B93]/70 [@media(hover:none)]:text-[#A09B93]/75"
+                        : "text-[#A09B93]/70 group-hover:text-[#A09B93]"
                     )}
                     style={{ fontFamily: "var(--font-cormorant)", fontWeight: activeIndex === i ? 500 : 300 }}
                   >
@@ -320,7 +320,7 @@ export default function LocationsSection() {
                       "block text-[10px] font-light mt-1 transition-colors duration-500",
                       activeIndex === i
                         ? "text-[#A09B93]/60"
-                        : "text-[#6B6560]/20 [@media(hover:none)]:text-[#A09B93]/45"
+                        : "text-[#A09B93]/40"
                     )}
                   >
                     {loc.area}

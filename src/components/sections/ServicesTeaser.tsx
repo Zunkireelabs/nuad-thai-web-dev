@@ -98,18 +98,19 @@ export default function ServicesTeaser() {
           {/* Left — Heading + service list */}
           <div>
             <ScrollReveal delay={0.1}>
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-8">
                 <div className="w-8 h-[1px] bg-[#C9A96E]/50" />
                 <span className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E] font-light">
                   Our Services
                 </span>
+                <div className="md:hidden w-8 h-[1px] bg-[#C9A96E]/50" />
               </div>
             </ScrollReveal>
 
             <TextReveal
               text="Treatments Crafted for Total Wellbeing"
               tag="h2"
-              className="text-4xl sm:text-5xl md:text-6xl tracking-[-0.02em] mb-10 leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl tracking-[-0.02em] mb-10 leading-[1.1] text-center md:text-left"
               stagger={0.03}
             />
 
@@ -191,6 +192,7 @@ export default function ServicesTeaser() {
             </div>
 
             <ScrollReveal delay={0.5}>
+              <div className="flex justify-center md:justify-start">
               <Link
                 href="/services/"
                 className="inline-flex items-center gap-3 px-10 py-4 border border-[#C9A96E]/30 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500 font-medium group"
@@ -206,6 +208,7 @@ export default function ServicesTeaser() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
+              </div>
             </ScrollReveal>
           </div>
 

@@ -228,7 +228,7 @@ function ValueCard({
                 "text-[13px] leading-[1.8] font-light transition-all duration-500 max-w-[280px]",
                 isHovered
                   ? "text-[#A09B93] translate-y-0 opacity-100"
-                  : "text-[#A09B93]/60 translate-y-2 opacity-70 [@media(hover:none)]:text-[#A09B93]/95 [@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100"
+                  : "text-[#A09B93]/85 translate-y-0 opacity-100"
               )}
             >
               {item.description}

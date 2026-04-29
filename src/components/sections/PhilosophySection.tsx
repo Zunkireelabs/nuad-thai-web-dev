@@ -297,12 +297,12 @@ export default function PhilosophySection() {
             />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 md:gap-6 lg:gap-8">
             {elements.map((el, i) => (
               <div
                 key={el.name}
                 ref={(ref) => { elementsRef.current[i] = ref; }}
-                className="flex flex-col items-center text-center cursor-default"
+                className="flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center gap-5 sm:gap-0 cursor-default"
                 style={{ opacity: 0 }}
                 onMouseEnter={() => handleHover(i)}
                 onMouseLeave={() => handleLeave(i)}
@@ -310,7 +310,7 @@ export default function PhilosophySection() {
                 {/* Icon circle */}
                 <div
                   className={cn(
-                    "relative w-[104px] h-[104px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center mb-6 transition-all duration-700",
+                    "relative w-[78px] h-[78px] sm:w-[104px] sm:h-[104px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center sm:mb-6 shrink-0 transition-all duration-700",
                     hoveredElement === i
                       ? "text-[#C9A96E]"
                       : "text-[#A09B93]/50"
@@ -338,46 +338,49 @@ export default function PhilosophySection() {
                   {hoveredElement === i && (
                     <div className="absolute inset-0 rounded-full bg-[#C9A96E]/5 animate-pulse" />
                   )}
-                  <svg className="relative w-7 h-7 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                  <svg className="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={el.icon} />
                   </svg>
                 </div>
 
-                {/* Name */}
-                <h3
-                  className={cn(
-                    "text-xl md:text-[22px] mb-1 tracking-[-0.01em] transition-colors duration-500",
-                    hoveredElement === i ? "text-[#E7E3DE]" : "text-[#E7E3DE]/70"
-                  )}
-                  style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
-                >
-                  {el.name}
-                </h3>
+                {/* Text column — stays together as a block on mobile beside the icon */}
+                <div className="flex flex-col items-start sm:items-center min-w-0 flex-1 sm:flex-initial">
+                  {/* Name */}
+                  <h3
+                    className={cn(
+                      "text-xl md:text-[22px] mb-1 tracking-[-0.01em] transition-colors duration-500",
+                      hoveredElement === i ? "text-[#E7E3DE]" : "text-[#E7E3DE]/70"
+                    )}
+                    style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
+                  >
+                    {el.name}
+                  </h3>
 
-                {/* Sanskrit name */}
-                <span
-                  className={cn(
-                    "text-[10px] tracking-[0.15em] font-light mb-3 transition-colors duration-500",
-                    hoveredElement === i
-                      ? "text-[#C9A96E]/70"
-                      : "text-[#C9A96E]/30 [@media(hover:none)]:text-[#C9A96E]/65"
-                  )}
-                  style={{ fontStyle: "italic" }}
-                >
-                  {el.sanskrit}
-                </span>
+                  {/* Sanskrit name */}
+                  <span
+                    className={cn(
+                      "text-[10px] tracking-[0.15em] font-light mb-2 sm:mb-3 transition-colors duration-500",
+                      hoveredElement === i
+                        ? "text-[#C9A96E]/80"
+                        : "text-[#C9A96E]/55"
+                    )}
+                    style={{ fontStyle: "italic" }}
+                  >
+                    {el.sanskrit}
+                  </span>
 
-                {/* Description */}
-                <p
-                  className={cn(
-                    "text-[12px] leading-[1.7] font-light transition-all duration-500 max-w-[180px]",
-                    hoveredElement === i
-                      ? "text-[#A09B93]"
-                      : "text-[#6B6560]/60 [@media(hover:none)]:text-[#A09B93]/85"
-                  )}
-                >
-                  {el.description}
-                </p>
+                  {/* Description */}
+                  <p
+                    className={cn(
+                      "text-[12px] leading-[1.7] font-light transition-all duration-500 sm:max-w-[180px]",
+                      hoveredElement === i
+                        ? "text-[#A09B93]"
+                        : "text-[#A09B93]/75"
+                    )}
+                  >
+                    {el.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
