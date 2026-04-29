@@ -50,6 +50,7 @@ Screenshot*
 
 # Temp files
 temp_ss/
+qa-reports/
 
 # Raw unoptimized assets (originals from drive/HDD — never commit)
 raw-assets/
