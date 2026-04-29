@@ -265,8 +265,63 @@ export default function GallerySection() {
             </ScrollReveal>
           </div>
 
+          {/* MOBILE — Card stack: each image pins as you scroll, the next slides up over it like a fanned deck */}
+          <div className="md:hidden -mx-2">
+            {galleryImages.map((image, i) => (
+              <div
+                key={`stack-${i}`}
+                className="card-stack-item px-2"
+                style={{
+                  position: "sticky",
+                  top: `${72 + i * 5}px`,
+                  zIndex: i + 1,
+                  marginBottom: i === galleryImages.length - 1 ? "0" : "22vh",
+                }}
+                onClick={() => openLightbox(i)}
+              >
+                <div className="relative h-[64vh] min-h-[420px] overflow-hidden rounded-2xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] cursor-pointer">
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+
+                  {/* vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/95 via-[#0A0A0A]/10 to-[#0A0A0A]/40" />
+
+                  {/* index pill */}
+                  <div className="absolute top-5 left-5 z-10">
+                    <span className="px-3 py-1.5 bg-[#0A0A0A]/60 backdrop-blur-md text-[#C9A96E] text-[9px] tracking-[0.3em] uppercase font-light border border-[#C9A96E]/20 rounded-full">
+                      {String(i + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  {/* gold corners */}
+                  <div className="absolute top-3 left-3 w-10 h-10 border-l border-t border-[#C9A96E]/25 rounded-tl-2xl pointer-events-none" />
+                  <div className="absolute bottom-3 right-3 w-10 h-10 border-r border-b border-[#C9A96E]/25 rounded-br-2xl pointer-events-none" />
+
+                  {/* caption — always visible on mobile (no hover) */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <span className="block text-[10px] tracking-[0.3em] uppercase text-[#C9A96E]/80 font-light mb-2">
+                      {image.tag}
+                    </span>
+                    <h4
+                      className="text-2xl text-[#E7E3DE] leading-tight"
+                      style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
+                    >
+                      {image.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP — editorial grid */}
           {/* Row 1 — 60/40 split */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-4">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-4">
             <GalleryItem
               image={galleryImages[0]}
               index={0}
@@ -282,7 +337,7 @@ export default function GallerySection() {
           </div>
 
           {/* Row 2 — Three equal */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
+          <div className="hidden md:grid md:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
             <GalleryItem
               image={galleryImages[2]}
               index={2}
@@ -307,12 +362,12 @@ export default function GallerySection() {
           <GalleryItem
             image={galleryImages[5]}
             index={5}
-            className="h-[200px] sm:h-[260px] md:h-[320px] lg:h-[380px]"
+            className="hidden md:block md:h-[320px] lg:h-[380px]"
             onClick={() => openLightbox(5)}
           />
 
           {/* Row 4 — 60/40 split (feature shot) */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 mt-3 md:mt-4 mb-3 md:mb-4">
+          <div className="hidden md:grid md:grid-cols-5 gap-3 md:gap-4 mt-3 md:mt-4 mb-3 md:mb-4">
             <GalleryItem
               image={galleryImages[6]}
               index={6}
@@ -328,7 +383,7 @@ export default function GallerySection() {
           </div>
 
           {/* Row 5 — Three equal */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
+          <div className="hidden md:grid md:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
             <GalleryItem
               image={galleryImages[8]}
               index={8}
@@ -353,7 +408,7 @@ export default function GallerySection() {
           <GalleryItem
             image={galleryImages[11]}
             index={11}
-            className="h-[200px] sm:h-[260px] md:h-[320px] lg:h-[380px]"
+            className="hidden md:block md:h-[320px] lg:h-[380px]"
             onClick={() => openLightbox(11)}
           />
         </div>
