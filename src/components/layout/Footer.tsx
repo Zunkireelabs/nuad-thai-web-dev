@@ -177,7 +177,7 @@ export default function Footer() {
           </span>
           <div className="flex items-center gap-3">
             <a
-              href="https://www.facebook.com/NuadThaiSpa/"
+              href="https://www.facebook.com/nuadthainepal"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-[#C9A96E]/15 flex items-center justify-center text-[#A09B93]/70 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all duration-300"
@@ -188,7 +188,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/nuadthainepal/"
+              href="https://www.instagram.com/nuadthaispa.nepal/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-[#C9A96E]/15 flex items-center justify-center text-[#A09B93]/70 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all duration-300"
@@ -214,8 +214,27 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="py-5 border-t border-[#C9A96E]/5 text-center">
-          <p className="text-[11px] text-[#6B6560]/60 font-light">
-            &copy; {new Date().getFullYear()} Nuad Thai Spa & Wellness. All rights reserved.
+          <p className="text-[11px] text-[#6B6560]/60 font-light flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <span>&copy; {new Date().getFullYear()} Nuad Thai Spa & Wellness. All rights reserved.</span>
+            <span className="text-[#C9A96E]/20">|</span>
+            <span className="flex items-center gap-1.5">
+              Developed by
+              <a
+                href="https://zunkireelabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-[#A09B93]/70 hover:text-[#C9A96E] transition-colors duration-300"
+              >
+                <img
+                  src="/images/logo/zunkireelabs-icon.png"
+                  alt="Zunkireelabs"
+                  width={16}
+                  height={16}
+                  className="rounded-full"
+                />
+                zunkireelabs
+              </a>
+            </span>
           </p>
         </div>
       </div>
