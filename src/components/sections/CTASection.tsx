@@ -116,7 +116,7 @@ export default function CTASection() {
                   </div>
                   <div>
                     <span className="block text-[13px] text-[#E7E3DE]/80 font-medium">Open Daily</span>
-                    <span className="block text-[11px] text-[#6B6560] font-light">10 AM – 10 PM</span>
+                    <span className="block text-[11px] text-[#6B6560] font-light">10 AM – 8 PM</span>
                   </div>
                 </div>
 

@@ -159,7 +159,7 @@ export default function LocationsSection() {
 
           <ScrollReveal delay={0.2}>
             <p className="text-sm md:text-base text-[#A09B93] font-light max-w-xl mx-auto leading-relaxed">
-              From the heart of Kathmandu to the United Kingdom — find your
+              From the heart of Kathmandu to beyond the valley — find your
               nearest sanctuary of wellness.
             </p>
           </ScrollReveal>
@@ -331,7 +331,7 @@ export default function LocationsSection() {
           </div>
         </ScrollReveal>
 
-        {/* ─── BEYOND THE VALLEY + UK ─── */}
+        {/* ─── BEYOND THE VALLEY ─── */}
         <div className="grid md:grid-cols-3 gap-0 border border-[#C9A96E]/10 mb-10">
           {/* Beyond the Valley — 3 inline locations */}
           {beyondLocations.map((loc, i) => (
@@ -372,60 +372,9 @@ export default function LocationsSection() {
           ))}
         </div>
 
-        {/* ─── UK + CONTACT ROW ─── */}
+        {/* ─── CONTACT ROW ─── */}
         <ScrollReveal delay={0.15}>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-            {/* UK */}
-            <div className="relative overflow-hidden group border border-[#C9A96E]/10">
-              <div className="relative h-[220px] md:h-full min-h-[200px] overflow-hidden">
-                <img
-              loading="lazy"
-              decoding="async"
-                  src="/images/locations/uk.jpg"
-                  alt="United Kingdom"
-                  className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/90 via-[#0A0A0A]/70 to-[#0A0A0A]/50" />
-
-                <div className="absolute inset-0 flex items-center p-7 md:p-10">
-                  <div>
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9A96E]/40 font-light block mb-2">
-                      International
-                    </span>
-                    <h3
-                      className="text-2xl md:text-3xl text-[#E7E3DE] mb-2 tracking-[-0.01em]"
-                      style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300 }}
-                    >
-                      United Kingdom
-                    </h3>
-                    <div className="flex items-center gap-5">
-                      <div>
-                        <span
-                          className="text-3xl text-[#C9A96E]/70"
-                          style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300 }}
-                        >
-                          7+
-                        </span>
-                        <span className="text-[9px] tracking-[0.15em] uppercase text-[#6B6560] ml-2">
-                          Branches
-                        </span>
-                      </div>
-                      <div className="w-[1px] h-8 bg-[#C9A96E]/10" />
-                      <a
-                        href="/#locations"
-                        className="text-[#C9A96E]/60 text-[10px] tracking-[0.15em] uppercase font-light hover:text-[#C9A96E] transition-colors flex items-center gap-1.5"
-                      >
-                        Explore
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div>
             {/* Contact */}
             <div className="border border-[#C9A96E]/10 bg-[#0d0b08] flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-between gap-5 p-6 sm:p-7 md:p-10">
               <a
