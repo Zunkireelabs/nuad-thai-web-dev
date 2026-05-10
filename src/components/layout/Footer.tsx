@@ -158,15 +158,6 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-5 pt-4 border-t border-[#C9A96E]/8">
-              <div className="flex items-center justify-between gap-3 text-[13px] font-light">
-                <span className="text-[#A09B93]/80">United Kingdom</span>
-                <span className="text-[#6B6560]">7+ branches</span>
-              </div>
-              <p className="text-[11px] text-[#6B6560]/60 font-light mt-1">
-                London &bull; Nationwide
-              </p>
-            </div>
           </div>
         </div>
 
