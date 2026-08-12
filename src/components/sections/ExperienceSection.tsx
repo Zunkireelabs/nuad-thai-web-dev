@@ -11,8 +11,7 @@ import { useSafari } from "@/hooks/useSafari";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 7, suffix: "+", label: "UK Branches" },
-  { value: 3, suffix: "", label: "Nepal Locations" },
+  { value: 4, suffix: "", label: "Nepal Locations" },
   { value: 2020, suffix: "", label: "Established" },
   { value: 10000, suffix: "+", label: "Happy Clients" },
 ];
@@ -305,14 +304,13 @@ export default function ExperienceSection() {
 
         {/* Stats strip */}
         <ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-[#C9A96E]/10 mb-20 md:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-[#C9A96E]/10 mb-20 md:mb-24">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
                 className={cn(
                   "py-8 md:py-10 text-center relative group",
-                  i < stats.length - 1 && "border-r border-[#C9A96E]/8",
-                  i < 2 && "border-b lg:border-b-0 border-[#C9A96E]/8"
+                  i < stats.length - 1 && "border-b sm:border-b-0 sm:border-r border-[#C9A96E]/8"
                 )}
               >
                 {/* Gold top line on hover */}

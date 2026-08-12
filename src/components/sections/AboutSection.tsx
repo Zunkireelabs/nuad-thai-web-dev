@@ -24,12 +24,6 @@ const tabs = [
     text: `Every treatment is thoughtfully designed to rejuvenate your body, calm your mind, and nourish your spirit — a journey to total wellbeing.`,
   },
   {
-    id: "uk",
-    label: "UK Legacy",
-    image: "/images/about-uk.jpg",
-    text: `With 7 prestigious branches thriving in the United Kingdom, our legacy ensures every visit is an experience in unmatched comfort and care.`,
-  },
-  {
     id: "nepal",
     label: "Nepal Journey",
     image: "/images/about-nepal.jpg",
@@ -135,7 +129,7 @@ export default function AboutSection() {
 
         {/* Desktop: horizontal row — PURE CSS hover, no JS animation */}
         <div
-          className="hidden md:grid md:grid-cols-4 gap-0 border-t border-b border-[#C9A96E]/10"
+          className="hidden md:grid md:grid-cols-3 gap-0 border-t border-b border-[#C9A96E]/10"
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {tabs.map((tab, i) => (

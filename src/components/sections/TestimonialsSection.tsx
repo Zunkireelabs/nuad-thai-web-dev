@@ -30,7 +30,7 @@ const testimonials = [
   {
     name: "Emma Thompson",
     role: "Travel Writer",
-    location: "London, UK",
+    location: "International Guest",
     quote:
       "The attention to detail is remarkable — from the moment you enter to the calming tea ritual afterward. Every visit leaves me feeling like I've been on a week-long retreat. Truly world-class.",
     rating: 5,

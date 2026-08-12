@@ -19,7 +19,7 @@ const highlights = [
   },
   {
     title: "Signature Packages",
-    description: "Curated wellness journeys — from Energise Body to the luxurious London Package — blending massage, scrubs, and hydrotherapy.",
+    description: "Curated wellness journeys — from Energise Body to our luxurious Premium Spa Package — blending massage, scrubs, and hydrotherapy.",
     price: "From Rs. 6,700",
     image: "/images/services/signature-v2.jpg",
   },

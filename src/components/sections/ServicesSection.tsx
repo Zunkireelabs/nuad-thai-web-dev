@@ -126,7 +126,7 @@ const categories: ServiceCategory[] = [
         description: "Body Scrub (30 min), Traditional Thai Massage Dry/Oil (60/90 min), Foot Reflexology (30 min).",
       },
       {
-        name: "London Package",
+        name: "Premium Spa Package",
         duration: "3 / 3.30 hours",
         price: "Rs. 9,900 / 11,200",
         description: "Body Scrub (30 min), choose from Energise and Relax Body treatment (90/120 min), Foot Massage / Leg Massage (30 min), Jacuzzi Bath (30 min). Suitable for Hikers.",

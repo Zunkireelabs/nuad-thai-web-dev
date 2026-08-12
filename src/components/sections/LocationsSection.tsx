@@ -48,11 +48,6 @@ const locations = [
   },
 ];
 
-const beyondLocations = [
-  { name: "Soaltee Westend", label: "Nuad Thai Traditional", phone: "01-6680244" },
-  { name: "Nagarkot", label: "Nuad Thai", phone: "01-6680244" },
-  { name: "Itahari", label: "Nuad Thai", phone: "9802305673" },
-];
 
 export default function LocationsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -321,47 +316,6 @@ export default function LocationsSection() {
             </div>
           </div>
         </ScrollReveal>
-
-        {/* ─── BEYOND THE VALLEY ─── */}
-        <div className="grid md:grid-cols-3 gap-0 border border-[#C9A96E]/10 mb-10">
-          {/* Beyond the Valley — 3 inline locations */}
-          {beyondLocations.map((loc, i) => (
-            <ScrollReveal key={loc.name} delay={0.1 + i * 0.08}>
-              <div
-                className={cn(
-                  "relative p-6 md:p-8 group hover:bg-[#C9A96E]/[0.02] transition-all duration-700",
-                  i < beyondLocations.length - 1 && "border-b md:border-b-0 md:border-r border-[#C9A96E]/8"
-                )}
-              >
-                {/* Gold top line on hover */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-[#C9A96E]/0 via-[#C9A96E]/0 to-[#C9A96E]/0 group-hover:from-[#C9A96E]/0 group-hover:via-[#C9A96E]/30 group-hover:to-[#C9A96E]/0 transition-all duration-700" />
-
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h4
-                      className="text-lg md:text-xl text-[#E7E3DE]/80 group-hover:text-[#E7E3DE] transition-colors mb-0.5 tracking-[-0.01em]"
-                      style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
-                    >
-                      {loc.name}
-                    </h4>
-                    <p className="text-[11px] text-[#C9A96E]/30 font-light italic">
-                      {loc.label}
-                    </p>
-                  </div>
-
-                  <a href={`tel:${loc.phone}`} className="flex items-center gap-1.5 shrink-0 group/phone mt-1">
-                    <svg className="w-3 h-3 text-[#C9A96E]/25 group-hover/phone:text-[#C9A96E] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                    </svg>
-                    <span className="text-[12px] text-[#A09B93]/50 font-light group-hover/phone:text-[#C9A96E] transition-colors">
-                      {loc.phone}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
 
         {/* ─── CONTACT ROW ─── */}
         <ScrollReveal delay={0.15}>

@@ -6,8 +6,6 @@ import { cn, isSafari } from "@/lib/utils";
 import audioManager from "@/lib/audioManager";
 
 export default function AudioToggle() {
-  // Safari: skip entirely — fixed elements cause main-thread scrolling
-  if (typeof window !== "undefined" && isSafari()) return null;
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showLabel, setShowLabel] = useState(true);
@@ -137,7 +135,7 @@ export default function AudioToggle() {
     <div
       ref={containerRef}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
-      style={{ opacity: 0 }}
+      style={{ opacity: 0, transform: "translateZ(0)", WebkitTransform: "translateZ(0)" }}
     >
       {/* Floating label pill */}
       {showLabel && (

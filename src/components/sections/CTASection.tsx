@@ -253,8 +253,6 @@ export default function CTASection() {
               <span>Sanepa</span>
               <span className="text-[#C9A96E]/15">|</span>
               <span>Bhaisepati</span>
-              <span className="text-[#C9A96E]/15">|</span>
-              <span>7+ UK Branches</span>
             </div>
 
             <Link

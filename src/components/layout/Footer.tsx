@@ -43,8 +43,7 @@ export default function Footer() {
             </div>
             <p className="text-[13px] leading-[1.8] text-[#6B6560] font-light max-w-sm mb-5">
               A centuries-old healing art elevated with modern spa luxury.
-              Your sanctuary of peace and personalized care — from Nepal to
-              the United Kingdom.
+              Your sanctuary of peace and personalized care — rooted in Nepal.
             </p>
 
             {/* Contact + hours */}
@@ -57,6 +56,17 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                 </svg>
                 +977 980-2305670
+              </a>
+              <a
+                href="https://wa.me/9779802305670"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[13px] text-[#A09B93] hover:text-[#25D366] transition-colors duration-300 font-light"
+              >
+                <svg className="w-3.5 h-3.5 text-[#C9A96E]/50" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.826L.057 23.571a.5.5 0 00.608.61l5.88-1.485A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.373l-.36-.214-3.732.942.991-3.618-.235-.372A9.865 9.865 0 012.1 12C2.1 6.534 6.534 2.1 12 2.1c5.466 0 9.9 4.434 9.9 9.9 0 5.466-4.434 9.9-9.9 9.9z" />
+                </svg>
+                WhatsApp us
               </a>
               <a
                 href="mailto:info@nuadthainepal.com"
@@ -133,7 +143,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Locations column — Nepal + UK combined, one line per location */}
+          {/* Locations column */}
           <div>
             <h4 className="text-[11px] tracking-[0.25em] uppercase text-[#A09B93] font-medium mb-5">
               Our Locations
