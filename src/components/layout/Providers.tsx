@@ -19,11 +19,6 @@ const BackToTop = dynamic(
   { ssr: false }
 );
 
-const WhatsAppButton = dynamic(
-  () => import("@/components/ui/WhatsAppButton"),
-  { ssr: false }
-);
-
 export default function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (isSafari()) {
@@ -36,7 +31,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       <ScrollProgress />
       <AudioToggle />
       <BackToTop />
-      <WhatsAppButton />
       {children}
     </>
   );
