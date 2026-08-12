@@ -20,7 +20,8 @@ const companyLinks = [
 const locations = [
   { name: "Lazimpat", phone: "01-4002808" },
   { name: "Sanepa", phone: "01-5917921" },
-  { name: "Bhaisepati", phone: "9802305672" },
+  { name: "Bhaisepati", phone: "01-5927970" },
+  { name: "Thamel", phone: "01-4546789" },
 ];
 
 export default function Footer() {
@@ -152,10 +153,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li className="flex items-center justify-between gap-3 text-[13px] font-light">
-                <span className="text-[#A09B93]/80">Thamel</span>
-                <span className="text-[#C9A96E]/50 italic">Coming soon</span>
-              </li>
             </ul>
 
           </div>

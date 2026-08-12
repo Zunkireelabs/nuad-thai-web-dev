@@ -31,7 +31,7 @@ const locations = [
   {
     name: "Bhaisepati",
     area: "Lalitpur",
-    phone: "9802305672",
+    phone: "01-5927970",
     image: "/images/locations/bhaisepati.jpg",
     flagship: false,
     note: "Nuad Thai SPA",
@@ -40,11 +40,11 @@ const locations = [
   {
     name: "Thamel",
     area: "Kathmandu",
-    phone: "",
+    phone: "01-4546789",
     image: "/images/locations/thamel.jpg",
     flagship: false,
-    note: "",
-    status: "coming-soon" as const,
+    note: "Nuad Thai SPA",
+    status: "open" as const,
   },
 ];
 
@@ -207,15 +207,6 @@ export default function LocationsSection() {
                 <div className="absolute top-6 right-6 z-10">
                   <span className="px-4 py-1.5 bg-[#C9A96E] text-[#0A0A0A] text-[9px] tracking-[0.25em] uppercase font-semibold">
                     Flagship
-                  </span>
-                </div>
-              )}
-
-              {/* Coming soon badge */}
-              {active.status === "coming-soon" && (
-                <div className="absolute top-6 right-6 z-10">
-                  <span className="px-4 py-1.5 border border-[#C9A96E]/50 bg-[#0A0A0A]/80 text-[#C9A96E] text-[9px] tracking-[0.25em] uppercase font-light">
-                    Coming Soon
                   </span>
                 </div>
               )}
