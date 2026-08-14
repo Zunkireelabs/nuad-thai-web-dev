@@ -87,12 +87,14 @@ export default function Footer() {
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-3 max-w-sm">
-              <Link
-                href="/#contact"
+              <a
+                href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 px-6 py-3.5 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold text-center hover:bg-[#D4BA85] transition-all duration-500"
               >
                 Book Now
-              </Link>
+              </a>
               <Link
                 href="/services/"
                 className="flex-1 px-6 py-3.5 border border-[#C9A96E]/30 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase text-center hover:border-[#C9A96E]/60 hover:bg-[#C9A96E]/5 transition-all duration-500"

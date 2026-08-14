@@ -746,7 +746,9 @@ export default function ServicesSection() {
                   All prices are in Nepalese Rupees. Prices and services are subject to change without prior notice.
                 </p>
                 <a
-                  href="/#contact"
+                  href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-center px-6 py-3 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500 relative overflow-hidden group"
                 >
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
