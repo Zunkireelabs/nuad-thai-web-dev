@@ -1,27 +1,29 @@
 services:
   naud-thai-web-prod:
-    build: .
     container_name: naud-thai-web-prod
-    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
     networks:
       - hosting
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
     labels:
       - "traefik.enable=true"
-      # Main router: apex + preview hostnames serve the static site
-      - "traefik.http.routers.naud-thai-web-prod.rule=Host(`nuadthainepal.com`) || Host(`naud-web.zunkireelabs.com`)"
+      - "traefik.docker.network=hosting"
+      - "traefik.http.routers.naud-thai-web-prod.rule=Host(`nuadthainepal.com`)"
       - "traefik.http.routers.naud-thai-web-prod.entrypoints=websecure"
+      - "traefik.http.routers.naud-thai-web-prod.tls=true"
       - "traefik.http.routers.naud-thai-web-prod.tls.certresolver=letsencrypt"
-      # www → apex 301 redirect router (canonicalize to non-www)
-      - "traefik.http.routers.naud-www-redirect.rule=Host(`www.nuadthainepal.com`)"
-      - "traefik.http.routers.naud-www-redirect.entrypoints=websecure"
-      - "traefik.http.routers.naud-www-redirect.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.naud-www-redirect.middlewares=naud-www-to-apex"
-      - "traefik.http.routers.naud-www-redirect.service=naud-thai-web-prod"
-      # Redirect middleware: https://www.nuadthainepal.com/* → https://nuadthainepal.com/*
-      - "traefik.http.middlewares.naud-www-to-apex.redirectregex.regex=^https?://www\\.nuadthainepal\\.com/(.*)"
-      - "traefik.http.middlewares.naud-www-to-apex.redirectregex.replacement=https://nuadthainepal.com/$${1}"
-      - "traefik.http.middlewares.naud-www-to-apex.redirectregex.permanent=true"
-      # Service
+      - "traefik.http.routers.naud-thai-web-prod-http.rule=Host(`nuadthainepal.com`)"
+      - "traefik.http.routers.naud-thai-web-prod-http.entrypoints=web"
+      - "traefik.http.routers.naud-thai-web-prod-http.middlewares=naud-thai-web-prod-redirect"
+      - "traefik.http.middlewares.naud-thai-web-prod-redirect.redirectscheme.scheme=https"
       - "traefik.http.services.naud-thai-web-prod.loadbalancer.server.port=80"
 
 networks:

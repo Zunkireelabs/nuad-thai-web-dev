@@ -10,7 +10,7 @@
 
 ## URLs
 
-- **Production**: https://naud-web.zunkireelabs.com
+- **Production**: https://nuadthainepal.com
 
 ## Tech Stack
 
@@ -49,9 +49,11 @@
 npm run dev      # Local dev server
 npm run build    # Build static export
 npm run lint     # ESLint
-./deploy.sh dev  # Deploy to dev
-./deploy.sh prod # Deploy to prod (confirmation required)
 ```
+
+Deploys are automated via GitHub Actions: push to `main` (via PR — branch
+protected) builds and deploys to production automatically. No manual deploy
+script; see `.github/workflows/deploy.yml` and `.claude/skills/deploy-prod.md`.
 
 ## Project Structure
 

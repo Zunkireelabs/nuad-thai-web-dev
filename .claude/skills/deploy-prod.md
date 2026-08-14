@@ -1,19 +1,25 @@
 ---
 name: deploy-prod
-description: Build and deploy the site to production (naud-web.zunkireelabs.com) with verification
+description: Deploy the site to production (nuadthainepal.com) via GitHub Actions, with verification
 user_invocable: true
 ---
 
 # Deploy to Production
 
-Deploy the Nuad Thai website to the production environment. This is a high-impact action.
+Deploys are automated: pushing to `main` triggers `.github/workflows/deploy.yml`,
+which builds the Docker image on the VPS and restarts `naud-thai-web-prod`.
+`main` is branch-protected — changes land via PR, not direct push.
 
 ## Steps
 
-1. Run `npm run build` and verify it succeeds with no errors
-2. Check that the `out/` directory was created
-3. **Ask the user for final confirmation before proceeding** — remind them this is production
-4. Run `echo "y" | ./deploy.sh prod` to build the Docker image and restart the prod container
-5. After deployment, verify the container `naud-thai-web-prod` is running with `docker ps | grep naud-thai-web-prod`
-6. Spot-check a key piece of content inside the prod container to confirm the latest build is served: `docker exec naud-thai-web-prod sh -c 'grep -rl "<a known string from recent changes>" /usr/share/nginx/html/_next/static/chunks/ | wc -l'`
-7. Report the deployment status and URL: https://naud-web.zunkireelabs.com
+1. Confirm the target branch is `main` and it's up to date: `git fetch origin && git log origin/main -1`
+2. If deploying from a feature branch, open a PR into `main`, wait for the `CI` check to pass, then merge
+   (merging is what actually deploys — `deploy.yml` triggers on push to `main`)
+3. **Ask the user for final confirmation before merging** — remind them this ships to production
+4. After merge, watch the "Deploy to Production" run: `gh run watch --repo Zunkireelabs/nuad-thai-web-dev`
+5. Verify the site responds: `curl -I https://nuadthainepal.com` → expect `HTTP/2 200`
+6. Report the deployment status and URL: https://nuadthainepal.com
+
+If the deploy fails or needs to be undone, use the `Rollback` workflow
+(`.github/workflows/rollback.yml`, `workflow_dispatch` with a target commit SHA)
+rather than pushing a revert commit under time pressure.
