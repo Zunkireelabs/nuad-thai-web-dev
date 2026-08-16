@@ -144,6 +144,8 @@ export default function Header() {
             <div className="hidden lg:flex items-center">
               <a
                 href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-7 py-3 border border-[#C9A96E]/40 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500 font-medium"
               >
                 Book Now
@@ -229,6 +231,8 @@ export default function Header() {
           >
             <a
               href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="px-10 py-4 border border-[#C9A96E]/40 text-[#C9A96E] text-[12px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500"
             >

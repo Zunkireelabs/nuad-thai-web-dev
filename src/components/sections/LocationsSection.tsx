@@ -238,6 +238,8 @@ export default function LocationsSection() {
 
                     <a
                       href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-7 py-2.5 border border-[#C9A96E]/40 text-[#C9A96E] text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500"
                     >
                       Book Now
@@ -354,6 +356,8 @@ export default function LocationsSection() {
 
                 <a
                   href="https://zenly.zunkireelabs.com/nuad-thai-spa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-5 sm:px-7 py-2.5 bg-[#C9A96E] text-[#0A0A0A] text-[10px] tracking-[0.2em] uppercase font-semibold hover:bg-[#D4BA85] transition-all duration-500 whitespace-nowrap"
                 >
                   Book Now
