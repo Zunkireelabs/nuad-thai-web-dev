@@ -59,8 +59,6 @@ export default function Footer() {
               </a>
               <a
                 href="https://wa.me/9779802305670"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[13px] text-[#A09B93] hover:text-[#25D366] transition-colors duration-300 font-light"
               >
                 <svg className="w-3.5 h-3.5 text-[#C9A96E]/50" fill="currentColor" viewBox="0 0 24 24">
@@ -87,12 +85,12 @@ export default function Footer() {
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-3 max-w-sm">
-              <Link
-                href="/#contact"
+              <a
+                href="https://zenly.zunkireelabs.com/nuad-thai-spa/book"
                 className="flex-1 px-6 py-3.5 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold text-center hover:bg-[#D4BA85] transition-all duration-500"
               >
                 Book Now
-              </Link>
+              </a>
               <Link
                 href="/services/"
                 className="flex-1 px-6 py-3.5 border border-[#C9A96E]/30 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase text-center hover:border-[#C9A96E]/60 hover:bg-[#C9A96E]/5 transition-all duration-500"
@@ -176,8 +174,6 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <a
               href="https://www.facebook.com/nuadthainepal"
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-[#C9A96E]/15 flex items-center justify-center text-[#A09B93]/70 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all duration-300"
               aria-label="Facebook"
             >
@@ -187,8 +183,6 @@ export default function Footer() {
             </a>
             <a
               href="https://www.instagram.com/nuadthaispa.nepal/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-[#C9A96E]/15 flex items-center justify-center text-[#A09B93]/70 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all duration-300"
               aria-label="Instagram"
             >
@@ -198,8 +192,6 @@ export default function Footer() {
             </a>
             <a
               href="https://www.tripadvisor.com/Attraction_Review-g293890-d12161425-Reviews-Nuad_Thai_Spa-Kathmandu_Kathmandu_Valley_Bagmati_Zone_Central_Region.html"
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-[#C9A96E]/15 flex items-center justify-center text-[#A09B93]/70 hover:text-[#C9A96E] hover:border-[#C9A96E]/40 transition-all duration-300"
               aria-label="TripAdvisor"
             >
@@ -219,8 +211,6 @@ export default function Footer() {
               Developed by
               <a
                 href="https://zunkireelabs.com"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-[#A09B93]/70 hover:text-[#C9A96E] transition-colors duration-300"
               >
                 <img
