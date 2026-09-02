@@ -25,6 +25,17 @@ services:
       - "traefik.http.routers.naud-thai-web-prod-http.middlewares=naud-thai-web-prod-redirect"
       - "traefik.http.middlewares.naud-thai-web-prod-redirect.redirectscheme.scheme=https"
       - "traefik.http.services.naud-thai-web-prod.loadbalancer.server.port=80"
+      - "traefik.http.routers.naud-thai-web-prod-www.rule=Host(`www.nuadthainepal.com`)"
+      - "traefik.http.routers.naud-thai-web-prod-www.entrypoints=websecure"
+      - "traefik.http.routers.naud-thai-web-prod-www.tls=true"
+      - "traefik.http.routers.naud-thai-web-prod-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.naud-thai-web-prod-www.middlewares=naud-thai-web-prod-www-redirect"
+      - "traefik.http.middlewares.naud-thai-web-prod-www-redirect.redirectregex.regex=^https://www\\.nuadthainepal\\.com/(.*)"
+      - "traefik.http.middlewares.naud-thai-web-prod-www-redirect.redirectregex.replacement=https://nuadthainepal.com/$${1}"
+      - "traefik.http.middlewares.naud-thai-web-prod-www-redirect.redirectregex.permanent=true"
+      - "traefik.http.routers.naud-thai-web-prod-www-http.rule=Host(`www.nuadthainepal.com`)"
+      - "traefik.http.routers.naud-thai-web-prod-www-http.entrypoints=web"
+      - "traefik.http.routers.naud-thai-web-prod-www-http.middlewares=naud-thai-web-prod-www-redirect"
 
 networks:
   hosting:
