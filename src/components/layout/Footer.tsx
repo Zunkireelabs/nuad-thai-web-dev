@@ -86,7 +86,7 @@ export default function Footer() {
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-3 max-w-sm">
               <a
-                href="https://zenly.zunkireelabs.com/nuad-thai-spa/book"
+                href="https://app.zennly.io/nuad-thai-spa/book"
                 className="flex-1 px-6 py-3.5 bg-[#C9A96E] text-[#0A0A0A] text-[11px] tracking-[0.2em] uppercase font-semibold text-center hover:bg-[#D4BA85] transition-all duration-500"
               >
                 Book Now

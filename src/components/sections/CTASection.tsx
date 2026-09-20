@@ -152,7 +152,7 @@ export default function CTASection() {
             {/* Main card — Book Appointment */}
             <ScrollReveal delay={0.15}>
               <a
-                href="https://zenly.zunkireelabs.com/nuad-thai-spa/book"
+                href="https://app.zennly.io/nuad-thai-spa/book"
                 className="block group"
               >
                 <div className="relative border border-[#C9A96E]/15 bg-[#C9A96E]/[0.03] p-7 md:p-8 hover:border-[#C9A96E]/30 hover:bg-[#C9A96E]/[0.06] transition-all duration-700">
