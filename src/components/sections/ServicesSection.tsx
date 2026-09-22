@@ -21,11 +21,16 @@ interface RawServiceRow {
   category_name: string;
   category_id: string;
   category_display_order: number;
+  effective_price_npr: number | null;
+  is_on_offer: boolean | null;
+  original_price_npr: number | null;
 }
 
 interface ServiceVariant {
   duration_minutes: number | null;
   price_npr: number;
+  effective_price_npr: number;
+  is_on_offer: boolean;
 }
 
 interface DisplayService {
@@ -79,6 +84,8 @@ function groupServices(rows: RawServiceRow[]): DisplayCategory[] {
     service.variants.push({
       duration_minutes: row.duration_minutes,
       price_npr: row.price_npr,
+      effective_price_npr: row.effective_price_npr ?? row.price_npr,
+      is_on_offer: row.is_on_offer ?? false,
     });
   }
 
@@ -95,7 +102,11 @@ function formatVariants(variants: ServiceVariant[]) {
     ? variants.map((v) => (v.duration_minutes != null ? v.duration_minutes : "—")).join(" / ") + " min"
     : undefined;
   const price = "Rs. " + variants.map((v) => v.price_npr.toLocaleString("en-IN")).join(" / ");
-  return { duration, price };
+  const isOnOffer = variants.some((v) => v.is_on_offer);
+  const effectivePrice = isOnOffer
+    ? "Rs. " + variants.map((v) => v.effective_price_npr.toLocaleString("en-IN")).join(" / ")
+    : undefined;
+  return { duration, price, effectivePrice, isOnOffer };
 }
 
 /* ═══════════════════════════════════════════
@@ -354,7 +365,7 @@ function ServiceRow({ item, index }: { item: DisplayService; index: number }) {
   const detailRef = useRef<HTMLDivElement>(null);
   const accentRef = useRef<HTMLDivElement>(null);
 
-  const { duration, price } = formatVariants(item.variants);
+  const { duration, price, effectivePrice, isOnOffer } = formatVariants(item.variants);
 
   const toggle = () => {
     if (!item.description) return;
@@ -420,14 +431,30 @@ function ServiceRow({ item, index }: { item: DisplayService; index: number }) {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
-          <span
-            className={cn(
-              "text-[13px] font-light text-right transition-all duration-300",
-              isExpanded ? "text-[#C9A96E]" : "text-[#C9A96E]/70"
-            )}
-          >
-            {price}
-          </span>
+          {isOnOffer ? (
+            <span className="flex flex-col items-end gap-0.5">
+              <span className="text-[11px] font-light text-[#6B6560] line-through">
+                {price}
+              </span>
+              <span
+                className={cn(
+                  "text-[13px] font-light text-right transition-all duration-300",
+                  isExpanded ? "text-[#C9A96E]" : "text-[#C9A96E]/70"
+                )}
+              >
+                {effectivePrice}
+              </span>
+            </span>
+          ) : (
+            <span
+              className={cn(
+                "text-[13px] font-light text-right transition-all duration-300",
+                isExpanded ? "text-[#C9A96E]" : "text-[#C9A96E]/70"
+              )}
+            >
+              {price}
+            </span>
+          )}
           {item.description && (
             <svg
               width="14"

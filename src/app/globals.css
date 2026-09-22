@@ -155,6 +155,11 @@ html.lenis body {
   75% { transform: translate(-1%, 2%); }
 }
 
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(100%); }
+}
+
 @keyframes scroll-hint {
   0% { opacity: 0; transform: translateY(-8px); }
   40% { opacity: 1; }
@@ -184,6 +189,10 @@ html.lenis body {
 
 .animate-scroll-hint {
   animation: scroll-hint 2s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 5s ease-in-out infinite;
 }
 
 /* ═══════════════════════════════════════════

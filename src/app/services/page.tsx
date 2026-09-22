@@ -7,6 +7,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ServicesSection from "@/components/sections/ServicesSection";
+import CampaignBanner from "@/components/sections/CampaignBanner";
 import SpaEtiquette from "@/components/sections/SpaEtiquette";
 import CTASection from "@/components/sections/CTASection";
 import SectionTransition from "@/components/animations/SectionTransition";
@@ -147,6 +148,9 @@ export default function ServicesPage() {
 
         {/* ── Bridge: plum → black ── */}
         <div className="bridge-from-plum" />
+
+        {/* ── Active campaign banner (renders nothing if none is running) ── */}
+        <CampaignBanner />
 
         {/* ── Full services listing ── */}
         <ServicesSection />
