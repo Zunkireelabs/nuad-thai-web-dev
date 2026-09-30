@@ -223,6 +223,16 @@ export default function Footer() {
                 zunkireelabs
               </a>
             </span>
+            <span className="text-[#C9A96E]/20">|</span>
+            <span className="flex items-center gap-1.5">
+              Booking powered by
+              <a
+                href="https://zennly.io"
+                className="text-[#A09B93]/70 hover:text-[#C9A96E] transition-colors duration-300"
+              >
+                Zennly
+              </a>
+            </span>
           </p>
         </div>
       </div>
