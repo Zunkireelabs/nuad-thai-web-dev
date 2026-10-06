@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import PromoPopup from "@/components/ui/PromoPopup";
 import HeroSection from "@/components/sections/HeroSection";
 import MarqueeStrip from "@/components/sections/MarqueeStrip";
 import AboutSection from "@/components/sections/AboutSection";
@@ -28,6 +29,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <LoadingScreen onComplete={handleLoadingComplete} />
+      <PromoPopup />
       <Header />
 
       <main className="grain-overlay">

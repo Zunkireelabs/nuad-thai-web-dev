@@ -6,7 +6,7 @@ import Image from "next/image";
 const POPUP_DELAY_MS = 3000;
 const BOOKING_URL = "https://app.zennly.io/nuad-thai-spa/book";
 
-// Home-page-only promo popup for the September couple massage offer.
+// Home-page-only promo popup for the Dashain hair offer.
 // No session/local storage gating — intentionally reappears on every
 // load/refresh of the home page (per Sadin's request), but never on
 // other routes since it's only mounted from src/app/page.tsx.
@@ -69,8 +69,8 @@ export default function PromoPopup() {
         >
           <div className="relative w-full aspect-[1080/1350]">
             <Image
-              src="/images/promo/couple-massage-sept.jpg"
-              alt="A Moment for Two — 60-Minute Couple Massage, NPR 5,999 only, September special"
+              src="/images/promo/dashain-hair-offer.jpg"
+              alt="A Little Hair Refresh for the Festive Rush — Dashain hair offer: Bold Transformation from NPR 7,000, Relax & Radiate from NPR 8,500, Revive & Shine from NPR 10,000, Frizz-Free Luxury from NPR 5,999"
               fill
               className="object-cover"
               priority
