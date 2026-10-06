@@ -141,7 +141,13 @@ export default function Header() {
             </nav>
 
             {/* Book Now CTA */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center gap-3">
+              <a
+                href="https://app.zennly.io/nuad-thai-spa/customer-login"
+                className="px-7 py-3 border border-[#C9A96E]/40 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500 font-medium"
+              >
+                Login
+              </a>
               <a
                 href="https://app.zennly.io/nuad-thai-spa/book"
                 className="px-7 py-3 border border-[#C9A96E]/40 text-[#C9A96E] text-[11px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500 font-medium"
@@ -220,13 +226,20 @@ export default function Header() {
           })}
           <div
             className={cn(
-              "mt-4 transition-all duration-500",
+              "mt-4 flex items-center gap-3 transition-all duration-500",
               menuOpen
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             )}
             style={{ transitionDelay: menuOpen ? "400ms" : "0ms" }}
           >
+            <a
+              href="https://app.zennly.io/nuad-thai-spa/customer-login"
+              onClick={() => setMenuOpen(false)}
+              className="px-10 py-4 border border-[#C9A96E]/40 text-[#C9A96E] text-[12px] tracking-[0.2em] uppercase hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-all duration-500"
+            >
+              Login
+            </a>
             <a
               href="https://app.zennly.io/nuad-thai-spa/book"
               onClick={() => setMenuOpen(false)}
