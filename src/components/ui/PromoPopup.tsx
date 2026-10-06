@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const POPUP_DELAY_MS = 3000;
 const BOOKING_URL = "https://app.zennly.io/nuad-thai-spa/book";
+const PROMO_IMAGE = "/images/promo/dashain-hair-offer.webp";
 
 // Home-page-only promo popup for the Dashain hair offer.
 // No session/local storage gating — intentionally reappears on every
@@ -12,13 +13,25 @@ const BOOKING_URL = "https://app.zennly.io/nuad-thai-spa/book";
 // other routes since it's only mounted from src/app/page.tsx.
 export default function PromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [delayDone, setDelayDone] = useState(false);
+  const [imageReady, setImageReady] = useState(false);
+
+  // Preload and decode the banner on mount (during the loading screen and
+  // delay) so the popup never animates in with an empty frame. On error we
+  // still open so the Book Now button stays reachable.
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = PROMO_IMAGE;
+    const markReady = () => setImageReady(true);
+    img.decode().then(markReady, markReady);
+  }, []);
 
   // Start the delay once the LoadingScreen finishes (it dispatches
   // "nuad-loading-complete"), so visitors see the home page first.
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
     const onLoadingComplete = () => {
-      timer = setTimeout(() => setIsOpen(true), POPUP_DELAY_MS);
+      timer = setTimeout(() => setDelayDone(true), POPUP_DELAY_MS);
     };
     window.addEventListener("nuad-loading-complete", onLoadingComplete, { once: true });
     return () => {
@@ -26,6 +39,10 @@ export default function PromoPopup() {
       clearTimeout(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (delayDone && imageReady) setIsOpen(true);
+  }, [delayDone, imageReady]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -78,7 +95,7 @@ export default function PromoPopup() {
         >
           <div className="relative w-full aspect-[1080/1350]">
             <Image
-              src="/images/promo/dashain-hair-offer.jpg"
+              src={PROMO_IMAGE}
               alt="A Little Hair Refresh for the Festive Rush — Dashain hair offer: Bold Transformation from NPR 7,000, Relax & Radiate from NPR 8,500, Revive & Shine from NPR 10,000, Frizz-Free Luxury from NPR 5,999"
               fill
               className="object-cover"
