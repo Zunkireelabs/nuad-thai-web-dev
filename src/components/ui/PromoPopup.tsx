@@ -13,9 +13,18 @@ const BOOKING_URL = "https://app.zennly.io/nuad-thai-spa/book";
 export default function PromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Start the delay once the LoadingScreen finishes (it dispatches
+  // "nuad-loading-complete"), so visitors see the home page first.
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), POPUP_DELAY_MS);
-    return () => clearTimeout(timer);
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const onLoadingComplete = () => {
+      timer = setTimeout(() => setIsOpen(true), POPUP_DELAY_MS);
+    };
+    window.addEventListener("nuad-loading-complete", onLoadingComplete, { once: true });
+    return () => {
+      window.removeEventListener("nuad-loading-complete", onLoadingComplete);
+      clearTimeout(timer);
+    };
   }, []);
 
   useEffect(() => {
