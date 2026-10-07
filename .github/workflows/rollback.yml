@@ -27,7 +27,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             DIR="/home/zunkireelabs/devprojects/websiteprojects/naud-thai-web-dev"
-            CONTAINER="naud-thai-web-prod"
+            CONTAINER="nuad-thai-web-prod"
 
             echo "Rolling back production to ${{ inputs.commit_sha }}"
             echo "Reason: ${{ inputs.reason }}"

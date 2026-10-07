@@ -47,7 +47,7 @@ jobs:
             if [ ! -d "$DIR" ]; then
               echo "First deployment — bootstrapping $DIR"
               mkdir -p "$DIR"
-              git clone -b main git@github.com:${{ github.repository }}.git "$DIR"
+              git clone -b main https://github.com/${{ github.repository }}.git "$DIR"
             fi
 
             cd "$DIR"
@@ -61,7 +61,7 @@ jobs:
 
             echo "Waiting for container to be healthy..."
             sleep 10
-            CONTAINER="naud-thai-web-prod"
+            CONTAINER="nuad-thai-web-prod"
             for i in $(seq 1 12); do
               STATUS=$(docker inspect --format='{{.State.Health.Status}}' "$CONTAINER" 2>/dev/null || echo "unknown")
               if [ "$STATUS" = "healthy" ]; then
