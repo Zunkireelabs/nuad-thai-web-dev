@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            DIR="/home/zunkireelabs/devprojects/websiteprojects/naud-thai-web-dev"
+            DIR="/home/zunkireelabs/devprojects/websiteprojects/nuad-thai-web"
 
             # First-push bootstrap: create directory and clone if missing
             if [ ! -d "$DIR" ]; then
