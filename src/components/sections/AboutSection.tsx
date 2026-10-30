@@ -27,7 +27,7 @@ const tabs = [
     id: "nepal",
     label: "Nepal Journey",
     image: "/images/about-nepal.jpg",
-    text: `Our journey began in Kathmandu — Panipokhari in 2020, followed by Boudha and Sanepa, each reflecting our commitment to authentic Thai wellness.`,
+    text: `Our journey began in Kathmandu — Panipokhari in 2020, followed by Sanepa, Thamel and Bhaisepati, each reflecting our commitment to authentic Thai wellness.`,
   },
 ];
 
