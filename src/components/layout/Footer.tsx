@@ -67,13 +67,13 @@ export default function Footer() {
                 WhatsApp us
               </a>
               <a
-                href="mailto:info@nuadthainepal.com"
+                href="mailto:enquiry@nuadthainepal.com"
                 className="flex items-center gap-2 text-[13px] text-[#A09B93] hover:text-[#C9A96E] transition-colors duration-300 font-light"
               >
                 <svg className="w-3.5 h-3.5 text-[#C9A96E]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
-                info@nuadthainepal.com
+                enquiry@nuadthainepal.com
               </a>
               <div className="flex items-center gap-2 text-[13px] text-[#A09B93]/70 font-light">
                 <svg className="w-3.5 h-3.5 text-[#C9A96E]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
